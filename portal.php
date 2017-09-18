@@ -212,7 +212,7 @@
                                     </div>
 
                                     <div class="card-footer">
-                                        <ul class="nav nav-pills card-header-pills nav-fill" role="tablist">
+                                        <ul class="nav nav-pills card-header-pills nav-justified" role="tablist">
                                             <li class="nav-item">
                                                 <a class="nav-link active" href="#overview2" data-toggle="tab"><i class="fa fa-eye" aria-hidden="true"></i> Overview</a>
                                             </li>
