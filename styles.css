@@ -72,8 +72,44 @@ h1 {
 }
 
 /*
- * Dashboard
+ * Portal
  */
+
+/* Widgets */
+.circle-widget {
+    background: #0A243E;
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    position: relative;
+    margin: 60px auto;
+    font-size: 30px;
+    color: #fff;
+    line-height: 180px;
+    text-align: center;
+}
+
+.circle-left {
+    box-shadow: 0 0 0 30px #23b125;
+}
+
+.circle-right {
+    box-shadow: 0 0 0 30px #b12f23;
+}
+
+.card-body-portal {
+    min-height: 420px;
+    max-height: 420px;
+    overflow: scroll;
+}
+
+.table-widget {
+    text-align: left;
+}
+
+.ticker-widget {
+    font-size: 25px;
+}
 
 /* Placeholders */
 .placeholders {
@@ -83,11 +119,6 @@ h1 {
 .placeholder img {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-}
-
-.card-portal {
-    width: 25rem;
-    min-height: 280px;
 }
 
 div.tab-content {

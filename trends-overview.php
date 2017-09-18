@@ -18,7 +18,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
 
-        <title>Trends | Graphs</title>
+        <title>Overview | Trends</title>
 
     </head>
     <body>
@@ -35,11 +35,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="portal.php">Home</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="graphs.php">Graphs<span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="graph-overview.php">Graphs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Import</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Trends<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Help</a>
@@ -66,19 +69,10 @@
                 <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href=graph-overview.php">Overview</a>
+                            <a class="nav-link active" href="trends-overview.php">Overview<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="graph-consumers.php">Consumers</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="graph-outlets.php">Outlets</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="graph-transactions.php">Transactions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="graph-trends.php">Trends<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#">User Types</a>
                         </li>
                     </ul>
 

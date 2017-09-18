@@ -36,10 +36,13 @@
                         <a class="nav-link" href="portal.php">Home</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="graphs.php">Graphs<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="graph-overview.php">Graphs<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Import</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="trends-overview.php">Trends</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Help</a>
@@ -77,9 +80,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="graph-transactions.php">Transactions</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="graph-trends.php">Trends</a>
-                        </li>
                     </ul>
 
                     <ul class="nav nav-pills flex-column">
@@ -92,8 +92,8 @@
                 <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
                     <h1 id="overview">Overview</h1>
 
-                    <section class="row text-center placeholders">
-                        <div class="col-3 col-sm-3 placeholder left">
+                    <section class="row placeholders">
+                        <div class="col-3 col-sm-3 left">
 
                             <form>
                                 <div class="form-group">
@@ -119,7 +119,7 @@
                                         <option>Liar</option>
                                         <option>Air Bar</option>
                                         <option>Floor 5</option>
-                                        <option>Level 2 Reception</option>
+                                        <option>Entertainments</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -138,7 +138,7 @@
                             </form>
 
                         </div>
-                        <div class="col-9 col-sm-9 placeholder right">
+                        <div class="col-9 col-sm-9 right">
                             <canvas id="line-chart"></canvas>
                         </div>
                     </section>
@@ -175,7 +175,7 @@
                     fill: false
                 }, {
                     data: [6,3,2,2,7,26,82,172,312,433],
-                    label: "Level 2",
+                    label: "Entertainments",
                     borderColor: "#c45850",
                     fill: false
                 }

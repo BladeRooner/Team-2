@@ -42,6 +42,9 @@
                         <a class="nav-link" href="#">Import</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="trends-overview.php">Trends</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Help</a>
                     </li>
                 </ul>
@@ -77,9 +80,6 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="graph-transactions.php">Transactions<span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="graph-trends.php">Trends</a>
-                        </li>
                     </ul>
 
                     <ul class="nav nav-pills flex-column">
@@ -91,24 +91,6 @@
 
                 <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
                     <h1 id="overview">Transactions</h1>
-
-                    <section class="row text-center placeholders year-current">
-                        <div class="col-6 col-sm-4 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="125" height="125" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                            <h4>Users</h4>
-                            <div class="text-muted">⬇5%</div>
-                        </div>
-                        <div class="col-6 col-sm-4 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="125" height="125" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                            <h4>Transactions</h4>
-                            <span class="text-muted">⬆3%</span>
-                        </div>
-                        <div class="col-6 col-sm-4 placeholder">
-                            <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="125" height="125" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                            <h4>Transactions</h4>
-                            <span class="text-muted">0%</span>
-                        </div>
-                    </section>
                 </main>
 
             </div>
