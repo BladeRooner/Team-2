@@ -45,7 +45,7 @@
                     <a class="dropdown-item" href="#">Options</a>
                     <a class="dropdown-item" href="team-management.php">Manage Team</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" href="logout.php">Logout</a>
                 </div>
             </li>
         </ul>

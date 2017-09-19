@@ -35,14 +35,28 @@ if (isset($_SESSION['login_user'])) {
                     </div>
                     <div class="form-group">
                         <label for="inputPassword">Password</label>
-                        <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                        <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
                     </div>
-                    <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    <button type="submit" class="btn btn-primary" name="submit">Sign in</button>
                 </form>
             </div>
             <div class="card-footer">
                 <small class="text-muted"><a class="text-muted" href="#">Forgot password</a>?</small>
             </div>
+
+            <?php
+
+            if ($_SESSION['loginError'] === 1)
+            {
+                echo "<script type=\"text/javascript\">alert(\"Blank username or password!\");</script>";
+                $_SESSION['loginError'] = 0;
+            }
+            else if ($_SESSION['loginError'] === 2)
+            {
+                echo "<script type=\"text/javascript\">alert(\"Wrong username or password!\");</script>";
+                $_SESSION['loginError'] = 0;
+            }
+            ?>
 
         </div>
     </div>
@@ -54,14 +68,8 @@ if (isset($_SESSION['login_user'])) {
     particlesJS.load('particles-js', 'assets/particles-js.json');
 </script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
-        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-        crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
-        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 </body>
 </html>
