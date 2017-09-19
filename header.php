@@ -37,13 +37,13 @@
 
         <?php // Change dropdown options based on user role below! ?>
         <ul class="navbar-nav">
-            <li class="nav-item dropdown">
+            <li class="<?php if ($currentPage === "management"): echo "active"; endif; ?> nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Account
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" id="account-dropdown" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="#">Options</a>
-                    <a class="dropdown-item" href="#">Manage Team</a>
+                    <a class="dropdown-item" href="team-management.php">Manage Team</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Logout</a>
                 </div>

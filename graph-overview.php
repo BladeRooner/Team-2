@@ -27,7 +27,7 @@
 
         <div class="container-fluid">
             <div class="row">
-                <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+                <nav class="col-md-2 d-none d-sm-block bg-light sidebar">
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
                             <a class="nav-link active" href="graph-overview.php">Overview<span class="sr-only">(current)</span></a>
@@ -50,11 +50,11 @@
                     </ul>
                 </nav>
 
-                <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+                <main class="ml-sm-auto col-md-10 pt-3" role="main">
                     <h1 id="overview">Overview</h1>
 
-                    <section class="row placeholders">
-                        <div class="col-3 col-sm-3 left">
+                    <section class="row">
+                        <div class="col-md-3 left">
 
                             <form>
                                 <div class="form-group">
@@ -99,7 +99,7 @@
                             </form>
 
                         </div>
-                        <div class="col-9 col-sm-9 right">
+                        <div class="col-md-9 right">
                             <canvas id="line-chart"></canvas>
                         </div>
                     </section>

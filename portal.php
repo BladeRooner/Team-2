@@ -44,14 +44,14 @@
                                             <p class="card-text">28/08/2017 – 03/09/2017</p>
                                             <hr>
 
-                                            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-expanded="false">
+                                            <div class="tab-pane fade show active" id="overview-left" role="tabpanel" aria-labelledby="overview-tab" aria-expanded="true">
                                                 <div class="circle-widget circle-left">£20,420</div>
                                                 <p class="card-text ticker-widget">⬆5%</p>
                                             </div>
-                                            <div class="tab-pane fade" id="chart" role="tabpanel" aria-expanded="true">
+                                            <div class="tab-pane fade" id="chart-left" role="tabpanel" aria-labelledby="chart-tab" aria-expanded="false">
                                                 <canvas class="portal-chart" id="myChart"></canvas>
                                             </div>
-                                            <div class="tab-pane fade" id="list" role="tabpanel" aria-expanded="true">
+                                            <div class="tab-pane fade" id="list-left" role="tabpanel" aria-labelledby="list-tab" aria-expanded="false">
                                                 <table class="table table-widget">
                                                         <thead>
                                                             <tr>
@@ -106,15 +106,13 @@
                                     <div class="card-footer">
                                         <ul class="nav nav-pills card-header-pills nav-justified" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" href="#overview" data-toggle="tab"><i class="fa fa-eye" aria-hidden="true"></i> Overview</a>
+                                                <a class="nav-link active" id="overview-tab-left" data-toggle="tab" href="#overview-left" role="tab" aria-controls="overview" aria-expanded="true"><i class="fa fa-eye" aria-hidden="false"></i> Overview</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#chart" data-toggle="tab"><i class="fa fa-pie-chart" aria-hidden="true"></i>
-                                                     Chart</a>
+                                                <a class="nav-link" id="chart-tab-left" data-toggle="tab" href="#chart-left" role="tab" aria-controls="chart" aria-expanded="false"><i class="fa fa-pie-chart" aria-hidden="true"></i> Chart</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#list" data-toggle="tab"><i class="fa fa-list" aria-hidden="true"></i>
-                                                     List</a>
+                                                <a class="nav-link" id="list-tab-left" data-toggle="tab" href="#list-left" role="tab" aria-controls="list" aria-expanded="false"><i class="fa fa-list" aria-hidden="true"></i> List</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -133,14 +131,15 @@
                                             <p class="card-text">28/08/2017 – 03/09/2017</p>
                                             <hr>
 
-                                            <div class="tab-pane fade show active" id="overview2" role="tabpanel" aria-expanded="false">
+                                            <div class="tab-pane fade show active" id="overview-right" role="tabpanel" aria-labelledby="overview-tab" aria-expanded="true">
                                                 <div class="circle-widget circle-right">526</div>
                                                 <p class="card-text ticker-widget">⬇2%</p>
                                             </div>
-                                            <div class="tab-pane fade" id="chart2" role="tabpanel" aria-expanded="true">
+
+                                            <div class="tab-pane fade" id="chart-right" role="tabpanel" aria-labelledby="chart-tab" aria-expanded="false">
                                                 <canvas class="portal-chart" id="myChart2"></canvas>
                                             </div>
-                                            <div class="tab-pane fade" id="list2" role="tabpanel" aria-expanded="true">
+                                            <div class="tab-pane fade" id="list-right" role="tabpanel" aria-labelledby="list-tab" aria-expanded="false">
                                                 <table class="table table-widget">
                                                     <thead>
                                                     <tr>
@@ -175,13 +174,13 @@
                                     <div class="card-footer">
                                         <ul class="nav nav-pills card-header-pills nav-justified" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" href="#overview2" data-toggle="tab"><i class="fa fa-eye" aria-hidden="true"></i> Overview</a>
+                                                <a class="nav-link active" id="overview-tab-right" data-toggle="tab" href="#overview-right" role="tab" aria-controls="overview" aria-expanded="true"><i class="fa fa-eye" aria-hidden="false"></i> Overview</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#chart2" data-toggle="tab"><i class="fa fa-pie-chart" aria-hidden="true"></i> Chart</a>
+                                                <a class="nav-link" id="chart-tab-right" data-toggle="tab" href="#chart-right" role="tab" aria-controls="chart" aria-expanded="false"><i class="fa fa-pie-chart" aria-hidden="true"></i> Chart</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#list2" data-toggle="tab" ><i class="fa fa-list" aria-hidden="true"></i> List</a>
+                                                <a class="nav-link" id="list-tab-right" data-toggle="tab" href="#list-right" role="tab" aria-controls="list" aria-expanded="false"><i class="fa fa-list" aria-hidden="true"></i> List</a>
                                             </li>
                                         </ul>
                                     </div>
