@@ -14,89 +14,105 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link href="styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="assets/styles.css" rel="stylesheet">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
 
         <title>Dashboard</title>
     </head>
     <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-        <a class="navbar-brand" href="#">
-            <img src="assets/light_logo.png" width="140" height="30" alt="DUSA Logo">
-        </a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="portal.php">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="graph-overview.php">Graphs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Import</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Help</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Options
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" id="account-dropdown" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="logout.php">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+        <?php $currentPage = "portal"; include "header.php";?>
 
         <div class="container-fluid">
             <div class="row">
 
-                <main class="col-sm-12 ml-sm-auto col-md-12 pt-3" role="main">
+                <main class="col-md-12 pt-3" role="main">
                     <h1>Dashboard</h1>
 
-                    <section class="row text-center placeholders year-current">
-                        <div class="col-6 col-sm-6 placeholder">
-                            <div class="mx-auto" style="width: 22rem;">
+                    <section class="row text-center">
+                        <div class="col-md-6">
+                            <div class="mx-auto" style="width: 25rem; padding-bottom: 20px;">
                                 <div class="card card-portal">
-                                    <h4 class="card-header text-center">Yoyo Sales</h4>
 
-                                    <div class="card-body">
+                                    <h4 class="card-header text-center">Total Sales</h4>
+
+                                    <div class="card-body card-body-portal">
                                         <div class="tab-content">
-                                            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-expanded="false">
-                                                <img src="data:image/gif;base64,R0lGODlhAQABAIABAADcgwAAACwAAAAAAQABAAACAkQBADs=" width="125" height="125" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                                                <div class="text-muted">⬆3%</div>
+
+                                            <p class="card-text">28/08/2017 – 03/09/2017</p>
+                                            <hr>
+
+                                            <div class="tab-pane fade show active" id="overview-left" role="tabpanel" aria-labelledby="overview-tab" aria-expanded="true">
+                                                <div class="circle-widget circle-left">£20,420</div>
+                                                <p class="card-text ticker-widget">⬆5%</p>
                                             </div>
-                                            <div class="tab-pane fade" id="chart" role="tabpanel" aria-expanded="true">
-                                                </canvas><canvas class="portal-chart" id="myChart"></canvas>
+                                            <div class="tab-pane fade" id="chart-left" role="tabpanel" aria-labelledby="chart-tab" aria-expanded="false">
+                                                <canvas class="portal-chart" id="myChart"></canvas>
                                             </div>
-                                            <div class="tab-pane fade" id="list" role="tabpanel" aria-expanded="true">
-                                                <p class="card-text">Table here</p>
+                                            <div class="tab-pane fade" id="list-left" role="tabpanel" aria-labelledby="list-tab" aria-expanded="false">
+                                                <table class="table table-widget">
+                                                        <thead>
+                                                            <tr>
+                                                                <th style="border-top: none;">Venue</th>
+                                                                <th style="border-top: none;">Total</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Mono</td>
+                                                                <td>£5,329</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Liar</td>
+                                                                <td>£4,874</td>
+                                                            </tr>
+                                                            <tr class="table-primary">
+                                                                <td>Air Bar</td>
+                                                                <td>£4,329</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Floor 5</td>
+                                                                <td>£3,102</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Entertainments</td>
+                                                                <td>£2,533</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Entertainments</td>
+                                                                <td>£2,533</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Entertainments</td>
+                                                                <td>£2,533</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Entertainments</td>
+                                                                <td>£2,533</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Entertainments</td>
+                                                                <td>£2,533</td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
+
                                         </div>
                                     </div>
 
                                     <div class="card-footer">
-                                        <ul class="nav nav-pills card-header-pills nav-fill" role="tablist">
+                                        <ul class="nav nav-pills card-header-pills nav-justified" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" href="#overview" data-toggle="tab">Overview</a>
+                                                <a class="nav-link active" id="overview-tab-left" data-toggle="tab" href="#overview-left" role="tab" aria-controls="overview" aria-expanded="true"><i class="fa fa-eye" aria-hidden="false"></i> Overview</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#chart" data-toggle="tab">Chart</a>
+                                                <a class="nav-link" id="chart-tab-left" data-toggle="tab" href="#chart-left" role="tab" aria-controls="chart" aria-expanded="false"><i class="fa fa-pie-chart" aria-hidden="true"></i> Chart</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#list" data-toggle="tab" >List</a>
+                                                <a class="nav-link" id="list-tab-left" data-toggle="tab" href="#list-left" role="tab" aria-controls="list" aria-expanded="false"><i class="fa fa-list" aria-hidden="true"></i> List</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -104,36 +120,67 @@
                             </div>
                         </div>
 
-                        <div class="col-6 col-sm-6 placeholder">
-                            <div class="mx-auto" style="width: 22rem;">
+                        <div class="col-md-6">
+                            <div class="mx-auto" style="width: 25rem; padding-bottom: 20px;">
                                 <div class="card card-portal">
-                                    <h4 class="card-header text-center">Yoyo Sales</h4>
+                                    <h4 class="card-header text-center">New Consumers</h4>
 
-                                    <div class="card-body">
+                                    <div class="card-body card-body-portal">
                                         <div class="tab-content">
-                                            <div class="tab-pane fade show active" id="overview2" role="tabpanel" aria-expanded="false">
-                                                <img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="125" height="125" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-                                                <div class="text-muted">⬇5%</div>
+
+                                            <p class="card-text">28/08/2017 – 03/09/2017</p>
+                                            <hr>
+
+                                            <div class="tab-pane fade show active" id="overview-right" role="tabpanel" aria-labelledby="overview-tab" aria-expanded="true">
+                                                <div class="circle-widget circle-right">526</div>
+                                                <p class="card-text ticker-widget">⬇2%</p>
                                             </div>
-                                            <div class="tab-pane fade" id="chart2" role="tabpanel" aria-expanded="true">
-                                                </canvas><canvas class="portal-chart" id="myChart2"></canvas>
+
+                                            <div class="tab-pane fade" id="chart-right" role="tabpanel" aria-labelledby="chart-tab" aria-expanded="false">
+                                                <canvas class="portal-chart" id="myChart2"></canvas>
                                             </div>
-                                            <div class="tab-pane fade" id="list2" role="tabpanel" aria-expanded="true">
-                                                <p class="card-text">Table here</p>
+                                            <div class="tab-pane fade" id="list-right" role="tabpanel" aria-labelledby="list-tab" aria-expanded="false">
+                                                <table class="table table-widget">
+                                                    <thead>
+                                                    <tr>
+                                                        <th style="border-top: none;">Venue</th>
+                                                        <th style="border-top: none;">Total</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Mono</td>
+                                                        <td>99</td>
+                                                    </tr>
+                                                    <tr class="table-primary">
+                                                        <td>Air Bar</td>
+                                                        <td>10</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Liar</td>
+                                                        <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Floor 5</td>
+                                                        <td>2</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
+
                                         </div>
                                     </div>
 
                                     <div class="card-footer">
-                                        <ul class="nav nav-pills card-header-pills nav-fill" role="tablist">
+                                        <ul class="nav nav-pills card-header-pills nav-justified" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" href="#overview2" data-toggle="tab">Overview</a>
+                                                <a class="nav-link active" id="overview-tab-right" data-toggle="tab" href="#overview-right" role="tab" aria-controls="overview" aria-expanded="true"><i class="fa fa-eye" aria-hidden="false"></i> Overview</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#chart2" data-toggle="tab">Chart</a>
+                                                <a class="nav-link" id="chart-tab-right" data-toggle="tab" href="#chart-right" role="tab" aria-controls="chart" aria-expanded="false"><i class="fa fa-pie-chart" aria-hidden="true"></i> Chart</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#list2" data-toggle="tab" >List</a>
+                                                <a class="nav-link" id="list-tab-right" data-toggle="tab" href="#list-right" role="tab" aria-controls="list" aria-expanded="false"><i class="fa fa-list" aria-hidden="true"></i> List</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -141,10 +188,6 @@
                             </div>
 
                         </div>
-                    </section>
-
-                    <section class="row text-center placeholders year-last">
-                    </section>
                 </main>
             </div>
         </div>
@@ -175,6 +218,7 @@
                 legend: {
                     display: false
                 },
+                animation: false
             }
         });
 
@@ -199,6 +243,7 @@
                 legend: {
                     display: false
                 },
+                animation: false
             }
         });
 

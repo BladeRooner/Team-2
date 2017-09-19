@@ -12,11 +12,10 @@ if (isset($_SESSION['login_user'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link href="styles.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link href="assets/styles.css" rel="stylesheet">
 
-    <title>Login</title>
+        <title>Sign in</title>
 
 </head>
 <body>
@@ -28,23 +27,15 @@ if (isset($_SESSION['login_user'])) {
         <div class="card card-login">
             <h4 class="card-header text-center">Sign in to Dashboard</h4>
             <div class="card-body">
-                <form class="container" id="needs-validation" action="loginLogic.php" method="post" novalidate>
+                <form class="container" action="loginLogic.php" method="post">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                               placeholder="Enter email" required>
+                        <label for="inputEmail">Email address</label>
+                        <input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" required>
                         <small id="emailHelp" class="form-text text-muted">Use your @dusa email.</small>
-                        <div class="invalid-feedback">
-                            Please provide a valid email.
-                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
-                               required>
-                        <div class="invalid-feedback">
-                            Please provide a valid password.
-                        </div>
+                        <label for="inputPassword">Password</label>
+                        <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password" required>
                     </div>
                     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                 </form>
@@ -61,20 +52,6 @@ if (isset($_SESSION['login_user'])) {
 
 <script>
     particlesJS.load('particles-js', 'assets/particles-js.json');
-
-    (function () {
-        "use strict";
-        window.addEventListener("load", function () {
-            var form = document.getElementById("needs-validation");
-            form.addEventListener("submit", function (event) {
-                if (form.checkValidity() == false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add("was-validated");
-            }, false);
-        }, false);
-    }());
 </script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

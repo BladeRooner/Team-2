@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link href="styles.css" rel="stylesheet">
+        <link href="assets/styles.css" rel="stylesheet">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
 
@@ -22,48 +22,12 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
-            <a class="navbar-brand" href="#">
-                <img src="assets/light_logo.png" width="140" height="30" alt="DUSA Logo">
-            </a>
-            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="portal.php">Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="graphs.php">Graphs<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Import</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Help</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Options
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right" id="account-dropdown" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <?php $currentPage = "graph"; include "header.php";?>
 
         <div class="container-fluid">
             <div class="row">
-                <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+                <nav class="col-md-2 d-none d-sm-block bg-light sidebar">
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
                             <a class="nav-link active" href="graph-overview.php">Overview<span class="sr-only">(current)</span></a>
@@ -77,9 +41,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="graph-transactions.php">Transactions</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="graph-trends.php">Trends</a>
-                        </li>
                     </ul>
 
                     <ul class="nav nav-pills flex-column">
@@ -89,11 +50,11 @@
                     </ul>
                 </nav>
 
-                <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
+                <main class="ml-sm-auto col-md-10 pt-3" role="main">
                     <h1 id="overview">Overview</h1>
 
-                    <section class="row text-center placeholders">
-                        <div class="col-3 col-sm-3 placeholder left">
+                    <section class="row">
+                        <div class="col-md-3 left">
 
                             <form>
                                 <div class="form-group">
@@ -119,7 +80,7 @@
                                         <option>Liar</option>
                                         <option>Air Bar</option>
                                         <option>Floor 5</option>
-                                        <option>Level 2 Reception</option>
+                                        <option>Entertainments</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
@@ -138,7 +99,7 @@
                             </form>
 
                         </div>
-                        <div class="col-9 col-sm-9 placeholder right">
+                        <div class="col-md-9 right">
                             <canvas id="line-chart"></canvas>
                         </div>
                     </section>
@@ -175,7 +136,7 @@
                     fill: false
                 }, {
                     data: [6,3,2,2,7,26,82,172,312,433],
-                    label: "Level 2",
+                    label: "Entertainments",
                     borderColor: "#c45850",
                     fill: false
                 }
