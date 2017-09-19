@@ -1,10 +1,20 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: cmckillop
- * Date: 13/09/2017
- * Time: 10:45
- */
+
+    include 'getTotalsData.php';
+    $totalData = [];
+    $totalData = $_SESSION['data'];
+    $totalJS=[];
+
+    while($row = mysqli_fetch_assoc($totalData)) {
+        foreach($row as $r){
+            if($r){
+                array_push($totalJS, $r);
+            }
+        }
+    }
+
+    $totalJS = json_encode($totalJS);
+
 ?>
 
 <!DOCTYPE HTML>
@@ -24,6 +34,13 @@
     <body>
 
         <?php $currentPage = "portal"; include "header.php";?>
+
+        <div class="alert alert-primary alert-dismissible fade show alert-portal" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Hello Rex!</strong> Welcome to the Dashboard for Air Bar.
+        </div>
 
         <div class="container-fluid">
             <div class="row">
@@ -45,7 +62,7 @@
                                             <hr>
 
                                             <div class="tab-pane fade show active" id="overview-left" role="tabpanel" aria-labelledby="overview-tab" aria-expanded="true">
-                                                <div class="circle-widget circle-left">£20,420</div>
+                                                <div class="circle-widget circle-left">£1,133</div>
                                                 <p class="card-text ticker-widget">⬆5%</p>
                                             </div>
                                             <div class="tab-pane fade" id="chart-left" role="tabpanel" aria-labelledby="chart-tab" aria-expanded="false">
@@ -194,33 +211,53 @@
 
     <script>
 
-        var ctx = document.getElementById("myChart").getContext('2d');
-        var ctx2 = document.getElementById("myChart2").getContext('2d');
+        var totData = <?php echo $totalJS; ?>;
 
-        var myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ["M", "T", "W", "T", "F", "S", "S"],
+        var numData =[];
+        for (var i = 0; i < totData.length; i++) {
+            if(i % 2 === 0) { // index is even
+                numData.push(totData[i]);
+
+            }
+        }
+
+        var labelNames = [];
+        for (var i = 0; i < totData.length; i++) {
+            if(i % 2 === 1) { // index is odd
+                labelNames.push(totData[i]);
+            }
+        }
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        var mixedChart = new Chart(ctx, {
+            type: 'doughnut',
+            data:{
                 datasets: [{
-                    backgroundColor: [
-                        "#2ecc71",
-                        "#3498db",
-                        "#95a5a6",
-                        "#9b59b6",
-                        "#f1c40f",
-                        "#e74c3c",
-                        "#34495e"
-                    ],
-                    data: [12, 19, 3, 17, 28, 24, 7]
-                }]
+                    data: numData,
+                    backgroundColor: ['rgb(186, 0, 186)','rgb(174,46,174)','rgb(153, 0, 153)','rgb(190, 92, 190)','rgb(126,0,126)','rgb(186, 0, 186)','rgb(174,46,174)','rgb(153, 0, 153)','rgb(190, 92, 190)','rgb(126,0,126)' ]
+                }],
+
+                // These labels appear in the legend and in the tooltips when hovering different arcs
+                labels: labelNames
+
             },
             options: {
+                cutoutPercentage:0,
+                borderWidth:0,
                 legend: {
                     display: false
                 },
-                animation: false
+                segmentShowStroke: false,
+                responsive: true
             }
         });
+
+    </script>
+
+    <script>
+
+        var ctx2 = document.getElementById("myChart2").getContext('2d');
 
         var myChart2 = new Chart(ctx2, {
             type: 'pie',

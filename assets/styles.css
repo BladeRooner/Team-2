@@ -101,9 +101,18 @@ h1 {
     margin-bottom: 1rem;
 }
 
+.alert-login {
+    margin-top: 20px;
+}
+
 /*
  * Portal
  */
+
+/* Alert */
+.alert-portal {
+    margin-top: 10px;
+}
 
 /* Widgets */
 .circle-widget {
@@ -150,6 +159,15 @@ h1 {
     font-size: 25px;
 }
 
+div.tab-content {
+    min-height: 200px;
+}
+
+.portal-chart {
+    margin-top: 1.5rem;
+    display: inline !important;
+}
+
 /* Placeholders */
 .placeholders {
     padding-bottom: 3rem;
@@ -158,13 +176,4 @@ h1 {
 .placeholder img {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-}
-
-div.tab-content {
-    min-height: 200px;
-}
-
-.portal-chart {
-    margin-top: 1.5rem;
-    display: inline !important;
 }
