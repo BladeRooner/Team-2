@@ -103,6 +103,7 @@ h1 {
 
 .alert-login {
     margin-top: 20px;
+    display: none;
 }
 
 /*

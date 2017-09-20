@@ -28,8 +28,6 @@
             $roles=mysqli_fetch_row($query);
             $privilege= $roles[0] ;
 
-            echo $privilege;
-
             if ($rows == 1) {
                 $_SESSION['login_user'] = $email; // Initializing Session
                 $_SESSION['login_user_role'] = $privilege;
