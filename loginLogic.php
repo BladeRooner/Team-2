@@ -8,7 +8,6 @@
      * 1 - blank username or password
      * 2 - wrong username or password
      */
-
     if (!isset($_SESSION['loginError'])) {
         $_SESSION['loginError'] = 0;
     }
@@ -23,16 +22,45 @@
             $password = $_POST['password'];
             $hashed_password = hash('sha256', $password);
 
-            $query = mysqli_query($conn, "select role from users where password='$hashed_password' AND username='$email'");
-            $rows = mysqli_num_rows($query);
-            $roles=mysqli_fetch_row($query);
-            $privilege= $roles[0] ;
+            $query = "SELECT * FROM ip17team2db.users WHERE password='$hashed_password' AND username='$email';";
+            $result = mysqli_query($conn, $query);
+            $rows = mysqli_num_rows($result);
 
-            if ($rows == 1) {
-                $_SESSION['login_user'] = $email; // Initializing Session
-                $_SESSION['login_user_role'] = $privilege;
+            if ($rows == 1)
+            {
+
+                /*
+                 * 0 - Administrator
+                 * 1 - Management Level
+                 * 2 - Standard User
+                 */
+                while($row = mysqli_fetch_assoc($result))
+                {
+                    $role = $row["role"];
+                    $firstName = $row["first_name"];
+                    $lastName = $row["last_name"];
+                    $outlet_id = $row["outlet_id"];
+                }
+
+                if (isset($outlet_id))
+                {
+                    $outletQuery = "SELECT DISTINCT outlet FROM ip17team2db.totals WHERE outlet_id = '$outlet_id';";
+                    $outletResult = mysqli_query($conn, $outletQuery);
+                    $outletRow = mysqli_fetch_assoc($outletResult);
+
+                    $outlet_name = $outletRow["outlet"];
+                }
+
+                $_SESSION['loggedInUser'] = $email; // Initializing Session
+
+                $_SESSION['userRole'] = $role;
+                $_SESSION['userOutletID'] = $outlet_id;
+                $_SESSION['userOutletName'] = $outlet_name;
+                $_SESSION['userFName'] = $firstName;
+                $_SESSION['userLName'] = $lastName;
 
                 header("location: portal.php"); // Redirecting To Other Page
+
             } else {
                 $_SESSION['loginError'] = 2;
                 header("location: login.php"); //

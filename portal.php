@@ -5,6 +5,9 @@
     $totalData = $_SESSION['data'];
     $totalJS=[];
 
+    $greeting = "Hello " . (string)$_SESSION['userFName'] . " " . (string)$_SESSION['userLName'] . "!";
+    $loginMessage = "Welcome to the " . (string)$_SESSION['userRole'] . " Dashboard for " . (string)$_SESSION['userOutletName'] . " (" . (string)$_SESSION['userOutletID'] . ")";
+
     while($row = mysqli_fetch_assoc($totalData)) {
         foreach($row as $r){
             if($r){
@@ -39,7 +42,7 @@
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <strong>Hello Rex!</strong> Welcome to the Dashboard for Air Bar.
+            <strong><?php echo $greeting;?></strong> <?php echo $loginMessage;?>
         </div>
 
         <div class="container-fluid">

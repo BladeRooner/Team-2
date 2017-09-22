@@ -1,7 +1,7 @@
 <?php
     include('loginLogic.php');
 
-    if (isset($_SESSION['login_user'])) {
+    if (isset($_SESSION['loggedInUser'])) {
         header("location: portal.php");
     }
 ?>
