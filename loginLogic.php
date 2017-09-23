@@ -4,9 +4,9 @@
     session_start(); // Starting Session
 
     /*
-     * 0 - no error
-     * 1 - blank username or password
-     * 2 - wrong username or password
+     * 0 - No error
+     * 1 - Blank username or password
+     * 2 - Wrong username or password
      */
     if (!isset($_SESSION['loginError'])) {
         $_SESSION['loginError'] = 0;
