@@ -1,49 +1,26 @@
 <?php
-
-    include 'getTotalsData.php';
-    $totalData = [];
-    $totalData = $_SESSION['data'];
-    $totalJS=[];
-
-    $greeting = "Hello " . (string)$_SESSION['userFName'] . " " . (string)$_SESSION['userLName'] . "!";
-    $loginMessage = "Welcome to the " . (string)$_SESSION['userRole'] . " Dashboard for " . (string)$_SESSION['userOutletName'] . " (" . (string)$_SESSION['userOutletID'] . ")";
-
-    while($row = mysqli_fetch_assoc($totalData)) {
-        foreach($row as $r){
-            if($r){
-                array_push($totalJS, $r);
-            }
-        }
-    }
-
-    $totalJS = json_encode($totalJS);
-
+    require 'portalLogic.php';
+    $pageTitle = "Dashboard";
+    $currentPage = "portal";
+    include "header.php";
 ?>
 
-<!DOCTYPE HTML>
-<html lang="en-GB">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="assets/styles.css" rel="stylesheet">
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
-
-        <title>Dashboard</title>
-    </head>
-    <body>
-
-        <?php $currentPage = "portal"; include "header.php";?>
-
-        <div class="alert alert-primary alert-dismissible fade show alert-portal" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong><?php echo $greeting;?></strong> <?php echo $loginMessage;?>
-        </div>
+        <?php
+            if ($_SESSION['notificationDismissed'] === false)
+            {
+                $greeting = "Hello " . (string)$_SESSION['userFName'] . "!";
+                $loginMessage = "Welcome to your Dashboard for " . (string)$_SESSION['userOutletName'] . ".";
+                $_SESSION['notificationDismissed'] = true;
+                ?>
+                    <div class="alert alert-primary alert-dismissible fade show alert-portal" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong><?php echo $greeting;?></strong> <?php echo $loginMessage;?>
+                    </div>
+                <?php
+            }
+        ?>
 
         <div class="container-fluid">
             <div class="row">
@@ -214,7 +191,7 @@
 
     <script>
 
-        var totData = <?php echo $totalJS; ?>;
+        var totData = <?php echo $leftChartTotalJS; ?>;
 
         var numData =[];
         for (var i = 0; i < totData.length; i++) {
@@ -255,10 +232,6 @@
                 responsive: true
             }
         });
-
-    </script>
-
-    <script>
 
         var ctx2 = document.getElementById("myChart2").getContext('2d');
 
