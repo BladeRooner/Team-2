@@ -22,8 +22,6 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="assets/styles.css" rel="stylesheet">
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.js"></script>
-
         <title><?php echo $pageTitle; ?></title>
     </head>
 
