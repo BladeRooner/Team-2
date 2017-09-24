@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: cmckillop
- * Date: 22/09/2017
- * Time: 14:49
- */
 
     require "connectToDatabase.php";
     session_start();
@@ -49,7 +43,7 @@
                 $_SESSION['creationStatus'] = 2;
                 $emailValid = false;
                 header("location: team-create.php");
-
+                exit;
             }
             else
             {
@@ -69,7 +63,7 @@
                 $_SESSION['creationStatus'] = 3;
                 $passwordMatch = false;
                 header("location: team-create.php");
-
+                exit;
             }
 
             $selectedOutlet = $_POST['newOutlet'];
@@ -91,6 +85,7 @@
                 }
 
                 header("location: team-create.php");
+                exit;
             }
         }
     }

@@ -8,16 +8,23 @@
      * 1 - Blank username or password
      * 2 - Wrong username or password
      */
-    if (!isset($_SESSION['loginError'])) {
+    if (!isset($_SESSION['loginError']))
+    {
         $_SESSION['loginError'] = 0;
     }
 
-    if (isset($_POST['submit'])) {
-        if (empty($_POST['email']) || empty($_POST['password'])) {
+    if (isset($_POST['submit']))
+    {
+        if (empty($_POST['email']) || empty($_POST['password']))
+        {
+
             $_SESSION['loginError'] = 1;
             header("location: login.php");
+            exit;
+
         } else {
-        // Define $username and $password
+
+            // Define $username and $password
             $email = $_POST['email'];
             $password = $_POST['password'];
             $hashed_password = hash('sha256', $password);
@@ -51,7 +58,7 @@
                     $outlet_name = $outletRow["outlet"];
                 }
 
-                $_SESSION['loggedInUser'] = $email; // Initializing Session
+                $_SESSION['userLoggedIn'] = $email; // Initializing Session
 
                 $_SESSION['userRole'] = $role;
                 $_SESSION['userOutletID'] = $outlet_id;
@@ -60,11 +67,12 @@
                 $_SESSION['userLName'] = $lastName;
 
                 header("location: portal.php"); // Redirecting To Other Page
+                exit;
 
             } else {
                 $_SESSION['loginError'] = 2;
-                header("location: login.php"); //
+                header("location: login.php");
+                exit;
             }
         }
     }
-?>
